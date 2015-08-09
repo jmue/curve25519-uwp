@@ -7,6 +7,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "curve25519", "curve25519\cu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "curve25519-test", "curve25519-test\curve25519-test.csproj", "{EA746244-4ED3-4D2E-A920-EDC8717008F4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1351C0B-AB8A-44E2-85D1-C66180DBEE86}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\Build.bat = deploy\Build.bat
+		deploy\nuget\curve25519.nuspec = deploy\nuget\curve25519.nuspec
+		deploy\nuget\curve25519.targets = deploy\nuget\curve25519.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
