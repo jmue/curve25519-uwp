@@ -25,6 +25,9 @@ bld/
 # Deploy folder NuGet packaging
 deploy/staging/
 
+#VS has some weird lock file. Ignore that.
+project.lock.json
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
