@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>curve25519-uwp</id>
+		<version>1.0.0</version>
+		<title>curve25519-uwp</title>
+		<authors>langboost</authors>
+		<owners>langboost</owners>
+		<licenseUrl>https://github.com/langboost/curve25519-uwp/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/langboost/curve25519-uwp</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/langboost/curve25519-uwp/master/NuGetIcon.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Curve25519, implemented as a C++ Windows Runtime Component, consumable in UWP.</description>
+		<releaseNotes>First release as a NuGet package. No functional changes.</releaseNotes>
+		<copyright>Copyright 2015</copyright>
+		<tags>uwp curve25519 dotnet</tags>
+	</metadata>
+	<files>
+		<!-- Visual Studio project target modifications -->
+		<file src="curve25519.targets" target="build\native" />
+		<!-- C++ headers -->
+		<file src="..\staging\include\*.h" target="include" />
+		<!-- x86 DLL, PRI, and XML -->
+		<file src="..\staging\lib\uap10.0\*.*" target="lib\uap10.0" />
+		<!-- x86 runtime implementation -->
+		<file src="..\staging\runtimes\win10-x86\native\*.dll" target="runtimes\win10-x86\native" />
+		<!-- x64 runtime implementation -->
+		<file src="..\staging\runtimes\win10-x64\native\*.dll" target="runtimes\win10-x64\native" />
+		<!-- ARM runtime implementation -->
+		<file src="..\staging\runtimes\win10-arm\native\*.dll" target="runtimes\win10-arm\native" />
+	</files>
+</package>

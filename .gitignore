@@ -22,6 +22,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Deploy folder NuGet packaging
+deploy/staging/
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
