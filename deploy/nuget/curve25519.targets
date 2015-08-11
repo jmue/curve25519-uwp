@@ -8,16 +8,16 @@
 
 	<!-- Reference curve25519, and select the appropriate implementation according to the platform targeted -->
 	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
-		<Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\curve25519.winmd">
-			<Implementation>curve25519.dll</Implementation>
+		<Reference Include="curve25519">
+			<HintPath>$(MSBuildThisFileDirectory)..\..\..\runtimes\win10-$(curve25519-Platform)\native\curve25519.winmd</HintPath>
+			<IsWinMDFile>true</IsWinMDFile>
 		</Reference>
-		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(win2d-Platform)\native\curve25519.dll" />
 	</ItemGroup>
 
 	<!-- If someone uses this from another C++ UAP project, this will be needed -->
 	<ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
 		<ClCompile>
-			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
 		</ClCompile>
 	</ItemDefinitionGroup>
 </Project>
