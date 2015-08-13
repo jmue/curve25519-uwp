@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>curve25519-uwp</id>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<title>curve25519-uwp</title>
 		<authors>langboost</authors>
 		<owners>langboost</owners>
@@ -11,7 +11,7 @@
 		<iconUrl>https://raw.githubusercontent.com/langboost/curve25519-uwp/master/NuGetIcon.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Curve25519, implemented as a C++ Windows Runtime Component, consumable in UWP.</description>
-		<releaseNotes>First release as a NuGet package. No functional changes.</releaseNotes>
+		<releaseNotes>Trying to fix an error where the implementation DLL cannot be found whenever referencing the project via NuGet in a C# unit test project.</releaseNotes>
 		<copyright>Copyright 2015</copyright>
 		<tags>uwp curve25519 dotnet</tags>
 	</metadata>
@@ -24,11 +24,11 @@
 		<!-- C++ headers -->
 		<file src="..\staging\include\*.h" target="include" />
 
-		<!-- x86 runtime DLL, PRI, and XML -->
+		<!-- x86 runtime DLL, PRI, and WinMD -->
 		<file src="..\staging\runtimes\win10-x86\native\*.*" target="runtimes\win10-x86\native" />
-		<!-- x64 runtime DLL, PRI, and XML -->
+		<!-- x64 runtime DLL, PRI, and WinMD -->
 		<file src="..\staging\runtimes\win10-x64\native\*.*" target="runtimes\win10-x64\native" />
-		<!-- ARM runtime DLL, PRI, and XML -->
+		<!-- ARM runtime DLL, PRI, and WinMD -->
 		<file src="..\staging\runtimes\win10-arm\native\*.*" target="runtimes\win10-arm\native" />
 	</files>
 </package>
