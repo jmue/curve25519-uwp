@@ -6,6 +6,12 @@
 		<curve25519-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</curve25519-Platform>
 	</PropertyGroup>
 
+	<Target Name="PlatformCheck" BeforeTargets="InjectReference"
+		Condition=" ( ('$(Platform)' != 'x86') AND ('$(Platform)' != 'ARM') AND  ('$(Platform)' != 'x64') )">
+		<Error  Text="Uh oh. Your dependence on curve25519-uwp forces you to target a specific platform (x86 / x64 or ARM). This is because of curve25519-uwp being a
+						C++ WinRT component. You can still build amazing apps. Just change the setting at the top of Visual Studio." />
+	</Target>
+
 	<!-- Reference curve25519, and select the appropriate implementation according to the platform targeted -->
 	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
 		<Reference Include="$(MSBuildThisFileDirectory)..\..\..\runtimes\win10-$(curve25519-Platform)\native\curve25519.winmd">

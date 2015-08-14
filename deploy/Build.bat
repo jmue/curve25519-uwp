@@ -35,21 +35,21 @@ copy curve25519\Curve25519Native.h %StagingPath%\include
 
 
 REM build x86
-%MSBuildPath% curve25519\curve25519.vcxproj /ds /fileLogger /property:Configuration=Release /property:Platform=x86
+%MSBuildPath% curve25519\curve25519.vcxproj /property:Configuration=Release /property:Platform=x86
 REM stage x86
 copy curve25519\Release\curve25519\curve25519.dll %StagingPath%\runtimes\win10-x86\native
 copy curve25519\Release\curve25519\curve25519.winmd %StagingPath%\runtimes\win10-x86\native
 copy curve25519\Release\curve25519\curve25519.pri %StagingPath%\runtimes\win10-x86\native
 
 REM build x64
-%MSBuildPath% curve25519\curve25519.vcxproj /ds /fileLogger /property:Configuration=Release /property:Platform=x64
+%MSBuildPath% curve25519\curve25519.vcxproj /property:Configuration=Release /property:Platform=x64
 REM stage x64
 copy curve25519\x64\Release\curve25519\curve25519.dll %StagingPath%\runtimes\win10-x64\native
 copy curve25519\x64\Release\curve25519\curve25519.winmd %StagingPath%\runtimes\win10-x64\native
 copy curve25519\x64\Release\curve25519\curve25519.pri %StagingPath%\runtimes\win10-x64\native
 
 REM build ARM
-%MSBuildPath% curve25519\curve25519.vcxproj /ds /fileLogger /property:Configuration=Release /property:Platform=ARM
+%MSBuildPath% curve25519\curve25519.vcxproj /property:Configuration=Release /property:Platform=ARM
 REM stage ARM
 copy curve25519\ARM\Release\curve25519\curve25519.dll %StagingPath%\runtimes\win10-arm\native
 copy curve25519\ARM\Release\curve25519\curve25519.winmd %StagingPath%\runtimes\win10-arm\native
